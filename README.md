@@ -29,10 +29,11 @@ There was a couple of items that are wished to be shared.
 - docker version 24.0.2
 - docker compose 2.18.1
 
-### How to Run <pre>
-git clone https://github.com/ejbest66/docker-nginx-reverseproxy-pythonflask.git <br>
-cd docker-nginx-reverseproxy-pythonflask<br>
-bash job.sh <br>
+### How to Run 
+<pre>
+git clone https://github.com/ejbest66/docker-nginx-reverseproxy-pythonflask.git
+cd docker-nginx-reverseproxy-pythonflask
+bash job.sh
 </pre>
 <br>
 <br>
