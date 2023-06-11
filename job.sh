@@ -31,11 +31,18 @@ echo " "
 echo "added TLS certificates as a security consideration"
 echo "observation the images were downloaded online; they should be only pulled from a repo after vetting and lockdown"
 echo " "   
-echo "Would you like to clean up Containers and Images?"
+docker compose stop 
+x=$?; if [ $x -ne 0 ]; then echo "docker compose stop status $x"; exit $x; fi
+docker compose rm --force 
+x=$?; if [ $x -ne 0 ]; then echo "docker compose rm status $x"; exit $x; fi
+#
+docker ps -a
+docker images 
+docker volume ls
+echo "For remaining lingering containers...alpine/openssl nginx xyz_app"
+echo " "
+echo "Would you like to clean up remaining Containers and Images?"
 read -p "Continue? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exit 1
 echo "cleaning up files created"
 bash clean-up-workfiles.sh
 rm -Rf files
-docker ps -a
-docker images 
-docker volume ls
